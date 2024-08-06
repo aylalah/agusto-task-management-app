@@ -7,11 +7,10 @@ export const environment = {
 
     //  LOCAL SERVICE
     
-    Url: 'https://agusto-task-mgt-api.checkdir.com/api/v1',
-    baseUrl: 'https://agusto-task-mgt-api.checkdir.com/api/v1',
-    imageLink: 'https://agusto-task-mgt-api.checkdir.com/api/v1',
-    documentLink: 'https://agusto-task-mgt-api.checkdir.com/api/v1',
-  
+     Url: 'http://localhost:4310/api/v1',
+     baseUrl: 'http://localhost:4310/api/v1',
+     imageLink: 'http://localhost:4310/api/v1',
+     documentLink: 'http://localhost:4310/api/v1',
            
 
 };

@@ -48,6 +48,8 @@ export class TaskComponent {
     total : 0,
   };
 
+  today = new Date();
+
   public taskPayload:any = {
     id: '',
     project: '',
@@ -55,8 +57,8 @@ export class TaskComponent {
     category: '',
     description: '',
     assigned_to: [],
-    priority: '',
-    start_date: '',
+    priority: 'High',
+    start_date: `${this.today.getFullYear()}-${this.today.getMonth() + 1}-${this.today.getDate()}`,
     due_date: '',
     attachment: '',
   }
