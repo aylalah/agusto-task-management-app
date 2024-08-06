@@ -492,6 +492,7 @@
                         <div class="form-group mb-3">
                             <label for="assigned_to" class="h5">Assigned to</label>
                             <select (change)="onAddUser($any($event.target).value)" class="form-control" data-style="py-0">
+                                <option value="">Select User</option>
                                 <option *ngFor="let user of users" value="{{user.id}}">{{user.first_name}} {{user.last_name}}</option>
                             </select>
                         </div>
