@@ -276,6 +276,20 @@ export class TaskComponent {
 
   }
 
+  async onDeleteTask(id: any){
+    await this.taskService.deleteTask(id).subscribe(
+      async (res) => {
+        this.response = res;
+        this.onGetAllTask();
+        console.log('resp',  this.response);
+      }, error => {
+        this.btnLoading = false;
+        this.response = error.error;
+        // this.alertService.toaster(this.error);
+        console.log('errorResponse', error);
+    });
+  }
+
   // async onUpdateAddRemove(append) {
 
   //   console.log('permission value', append);

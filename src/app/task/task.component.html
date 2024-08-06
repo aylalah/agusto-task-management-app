@@ -108,11 +108,36 @@
                                             <div class="btn bg-success-light mr-3" *ngIf="task.status == 'completed'"><i class="ri-survey-line mr-2"></i>Completed</div>
                                             <div class="btn bg-danger-light mr-3" *ngIf="task.status == 'canceled'"><i class="ri-survey-line mr-2"></i>Canceled</div>
 
-                                            <a class="btn bg-body" (click)="onGeTask(task.id)" data-toggle="collapse" href="#collapseEdit{{task.id}}" role="button" aria-expanded="false" attr.aria-controls="collapseEdit{{task.id}}"><i class="ri-edit-box-line m-0"></i></a>
+                                            <a class="btn bg-body mr-2" (click)="onGeTask(task.id)" data-toggle="collapse" href="#collapseEdit{{task.id}}" role="button" aria-expanded="false" attr.aria-controls="collapseEdit{{task.id}}"><i class="ri-edit-box-line m-0"></i></a>
+
+                                            <a class="btn bg-body" href="javascript:void(0)" role="button" data-toggle="modal" data-target="#exampleModalCenter"><i class="ri-delete-bin-line text-danger m-0"></i></a>
                                         </div>
                                     </div>  
                                 </div>
-                            </div>                                                                                                        
+                            </div>  
+                            
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                   <div class="modal-content">
+                                      <div class="modal-header">
+                                         <h5 class="modal-title" id="exampleModalCenterTitle">Delete Task</h5>
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                         </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <h4 class="mb-0">You are About to delete a task</h4>
+                                        <br>
+                                        <h5 class="mb-0">Click 'Delete' button to proceed</h5>
+                                      </div>
+                                      <div class="modal-footer">
+                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                         <button type="button" (click)="onDeleteTask(task.id)" class="btn btn-danger">Delete</button>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+
                             <div class="collapse" [id]="['collapseEdit'+task.id]">                                            
                                 <div class="card card-list task-card">
                                     <div class="card-header d-flex align-items-center justify-content-between px-0 mx-3">
@@ -171,8 +196,8 @@
                                                             <label for="status" class="h5">Status</label>
                                                             <select name="status" [(ngModel)]="updateTaskPayload.status" class="form-control" id="status" data-style="py-0">
                                                                 <option value="open">Open</option>
-                                                                <option value="pending">Pending</option>
-                                                                <!-- <option value="inprogress">Inprogress</option> -->
+                                                                <!-- <option value="pending">Pending</option> -->
+                                                                <option value="inprogress">Inprogress</option>
                                                                 <!-- <option value="backlog">Backlog</option> -->
                                                                 <option value="completed">Completed</option>
                                                                 <option value="canceled">Canceled</option>
